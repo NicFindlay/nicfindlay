@@ -2,6 +2,7 @@ import InteractiveGrid from '@/components/InteractiveGrid';
 import TerminalWindow from '@/components/TerminalWindow';
 import StatusBadge from '@/components/StatusBadge';
 import TypewriterText from '@/components/TypewriterText';
+import GenericAppIcon from '@/components/GenericAppIcon';
 
 function SocialIcon({ label }: { label: string }) {
   switch (label) {
@@ -123,6 +124,7 @@ export default function Home() {
                     <span className="hidden font-mono text-[12px] text-white/25 sm:block">
                       {String(i + 1).padStart(2, '0')}
                     </span>
+                    <GenericAppIcon size={40} />
                     <div>
                       <h2 className="font-semibold text-lg text-gray-200 pb-1">{project.title}</h2>
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
