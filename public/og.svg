@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <g opacity="0.4">
+    <path d="M80 130H1120" stroke="#1f1f1f"/>
+    <path d="M80 210H1120" stroke="#1f1f1f"/>
+    <path d="M80 290H1120" stroke="#1f1f1f"/>
+    <path d="M80 370H1120" stroke="#1f1f1f"/>
+    <path d="M80 450H1120" stroke="#1f1f1f"/>
+    <path d="M80 530H1120" stroke="#1f1f1f"/>
+  </g>
+  <rect x="90" y="110" width="1020" height="410" rx="24" fill="#0f0f0f" stroke="#1f1f1f"/>
+  <text x="140" y="270" fill="#ffffff" font-size="72" font-weight="600" font-family="Geist, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'">
+    Nic Findlay
+  </text>
+  <text x="140" y="330" fill="#9ca3af" font-size="24" font-weight="500" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">
+    Full stack developer · Side projects · Logs
+  </text>
+  <text x="140" y="390" fill="#39ff14" font-size="18" font-weight="600" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">
+    nicfindlay.com
+  </text>
+  <rect x="140" y="410" width="120" height="6" rx="3" fill="#39ff14" opacity="0.6"/>
+</svg>
