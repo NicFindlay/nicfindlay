@@ -1,137 +1,141 @@
+import InteractiveGrid from '@/components/InteractiveGrid';
+import TerminalWindow from '@/components/TerminalWindow';
+import StatusBadge from '@/components/StatusBadge';
+import TypewriterText from '@/components/TypewriterText';
+
+function SocialIcon({ label }: { label: string }) {
+  switch (label) {
+    case 'X':
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M18.9 3H21l-6.6 7.6 7.7 10.4h-6.1l-4.8-6.4-5.5 6.4H3l7.1-8.2L2.6 3h6.2l4.3 5.7L18.9 3zm-2.1 16.1h1.7L7.3 4.7H5.5l11.3 14.4z"
+          />
+        </svg>
+      );
+    case 'GitHub':
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.9 1.8 1.8 2.2.8.2 1.2-.1 1.5-.4.1-.7.4-1.2.7-1.5-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a9.9 9.9 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.6 1.1 2.8 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2z"
+          />
+        </svg>
+      );
+    case 'LinkedIn':
+      return (
+        <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.6h.1c.5-.9 1.8-1.9 3.6-1.9 3.9 0 4.5 2.4 4.5 5.5V21h-4v-5.6c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21H9z"
+          />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function Home() {
   const projects = [
     {
-      title: "Signal Drafts",
-      tagline: "Capture ideas → ship experiments",
-      status: "building",
-      revenue: "$0/mo",
+      title: 'One Trick Pony',
+      tagline: 'Learning SwiftUI and ship something on the App Store. Will leapfrog after this.',
+      status: 'building',
+      revenue: '$0/mo',
     },
     {
-      title: "Quiet Hours",
-      tagline: "Protect your deep work blocks",
-      status: "building",
-      revenue: "$0/mo",
+      title: 'Sage',
+      tagline: 'More info coming soon',
+      status: 'idea',
+      revenue: '$0/mo',
     },
     {
-      title: "Launch Ledger",
-      tagline: "Track revenue across all your bets",
-      status: "idea",
-      revenue: "$0/mo",
+      title: 'Crypto in Bio',
+      tagline: 'Random idea so I have 3.',
+      status: 'idea',
+      revenue: '$0/mo',
     },
   ];
 
   const socials = [
-    { label: "Twitter", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "LinkedIn", href: "#" },
+    { label: 'X', href: '#' },
+    { label: 'GitHub', href: '#' },
+    { label: 'LinkedIn', href: '#' },
+    { label: 'Email', href: '#' },
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100">
-      <main className="mx-auto grid min-h-screen w-full max-w-6xl gap-12 px-6 py-16 lg:grid-cols-[320px_1fr] lg:gap-16 lg:py-24">
-        {/* Left column - Profile */}
-        <aside className="flex flex-col gap-8 lg:sticky lg:top-24 lg:self-start">
-          <div className="space-y-6">
-            <div className="h-24 w-24 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600" />
-            <div className="space-y-2">
-              <h1 className="text-3xl font-semibold tracking-tight text-white">
-                Nic Findlay
-              </h1>
-              <p className="text-sm leading-relaxed text-white/60">
-                Seasoned developer exploring the indie maker path. Building
-                focused, useful products with clean UX and fast iteration.
-              </p>
-            </div>
-          </div>
+    <div className="relative min-h-screen bg-[#0a0a0a] text-zinc-100">
+      <InteractiveGrid />
 
+      <main className="relative z-10 mx-auto grid min-h-screen w-full max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[320px_1fr] lg:gap-28 lg:py-24">
+        {/* Left column — Profile */}
+        <aside className="flex flex-col gap-8 lg:sticky lg:top-24 lg:self-start">
+          <h1 className="text-4xl font-semibold tracking-tight text-white">
+            <TypewriterText text="Nic Findlay"></TypewriterText></h1>
+          <p className="text-xs text-white/30 font-mono">
+            Full stack dev trying to be an indie hacker. A work in progress...
+          </p>
+
+          {/* Connect */}
           <div className="space-y-3">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40">
-              connect
-            </p>
             <div className="flex flex-wrap gap-3">
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70 transition hover:border-emerald-400/50 hover:text-white"
-                >
-                  {s.label}
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/70 transition hover:border-primary hover:text-primary hover:shadow-[0_0_12px_rgba(57,255,20,0.15)]">
+                  <SocialIcon label={s.label} />
+                  {`${s.label}`}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40">
-              stack
-            </p>
-            <div className="flex flex-wrap gap-2 text-xs text-white/50">
-              {["Next.js", "React", "TypeScript", "Tailwind", "Postgres"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1"
-                  >
-                    {tech}
-                  </span>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="mt-auto hidden text-[11px] text-white/30 lg:block">
-            last_sync: 2026-02-05
+          <div className="mt-auto hidden font-mono text-[11px] text-white/20 lg:block">
+            <span className="text-white/10">{'/* '}</span>
+            last_sync: 2026-02-06
+            <span className="text-white/10">{' */'}</span>
           </div>
         </aside>
 
-        {/* Right column - Projects */}
+        {/* Right column — Projects */}
         <section className="flex flex-col gap-8">
           <div className="space-y-2">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-emerald-300/70">
-              in progress
-            </p>
-            <h2 className="text-2xl font-semibold text-white">Projects</h2>
-            <p className="text-sm text-white/50">
-              Small bets I am actively building or exploring.
+           
+            <h2 className="text-xl font-semibold text-primary">
+              Side Quests<span className="animate-blink text-primary"> _</span>
+            </h2>
+
+             <p className="font-mono text-[12px] text-white/30">
+              <span className="text-primary/50">{'// '}</span>
+              <span className="text-white/40">TODO: heaps...</span>
             </p>
           </div>
 
-          <div className="space-y-4">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="group flex items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-emerald-400/40 hover:bg-white/[0.06]"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 text-lg font-semibold text-white/80">
-                    {project.title.charAt(0)}
+          <TerminalWindow key="projects" title={`random.txt`}>
+            <div className="space-y-10">
+              {projects.map((project, i) => (
+                <div key={project.title} className="flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-6">
+                    <span className="hidden font-mono text-[12px] text-white/25 sm:block">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h2 className="font-semibold text-lg text-gray-200 pb-1">{project.title}</h2>
+                      <p className="font-mono text-xs text-white/40">{project.tagline}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white">{project.title}</h3>
-                    <p className="text-sm text-white/50">{project.tagline}</p>
+                  <div className="hidden flex-col items-end gap-2 sm:flex">
+                    <StatusBadge status={project.status} />
+                    <span className="font-mono text-xs text-white/30">{project.revenue}</span>
                   </div>
                 </div>
-                <div className="hidden flex-col items-end gap-1 text-right sm:flex">
-                  <span className="text-sm font-medium text-white/80">
-                    {project.revenue}
-                  </span>
-                  <span className="text-[11px] uppercase tracking-wider text-emerald-300/60">
-                    {project.status}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-white/40">
-              note
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-white/60">
-              Project names and details are placeholders. Update with your real
-              projects, add links, and swap in actual revenue/status.
-            </p>
-          </div>
+              ))}
+            </div>
+          </TerminalWindow>
         </section>
       </main>
     </div>
