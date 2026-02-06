@@ -74,11 +74,11 @@ export default function Home() {
       <main className="relative z-10 mx-auto grid min-h-screen w-full max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[320px_1fr] lg:gap-28 lg:py-24">
         {/* Left column — Profile */}
         <aside className="flex flex-col gap-8 lg:sticky lg:top-24 lg:self-start">
-          <h1 className="text-4xl font-semibold tracking-tight text-white">
+          <h1 className="text-4xl font-semibold tracking-tight text-white hover:text-primary transition-colors cursor-pointer">
             <TypewriterText text="Nic Findlay"></TypewriterText>
           </h1>
-          <p className="text-xs text-white/30 font-mono">
-            Full stack dev building some side projects. A work in progress...
+          <p className="text-[13px] text-white/30 font-mono">
+            Full stack developer & designer building some side projects. <br/><br/>A work in progress... 
           </p>
 
           {/* Connect */}
@@ -88,7 +88,7 @@ export default function Home() {
                 <a
                   key={s.label}
                   href={s.href}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/70 transition hover:border-primary hover:text-primary hover:shadow-[0_0_12px_rgba(57,255,20,0.15)]">
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/70 transition-all hover:border-primary hover:text-primary hover:shadow-[0_0_12px_rgba(57,255,20,0.15)] hover:animate-pulse">
                   <SocialIcon label={s.label} />
                   {`${s.label}`}
                 </a>
@@ -124,7 +124,7 @@ export default function Home() {
                     <span className="hidden font-mono text-[12px] text-white/25 sm:block">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="hidden lg:block">
+                    <span className="hidden lg:block transition-transform hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
                       <GenericAppIcon size={40} />
                     </span>
                     <div>
@@ -142,6 +142,13 @@ export default function Home() {
           </TerminalWindow>
         </section>
       </main>
+
+      <footer className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8 text-center">
+        <p className="font-mono text-[11px] text-white/20">
+          <span className="text-primary/50">{'// '}</span>
+          404 no cookies found 
+        </p>
+      </footer>
     </div>
   );
 }
