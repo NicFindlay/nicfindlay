@@ -78,7 +78,8 @@ export default function Home() {
             <TypewriterText text="Nic Findlay"></TypewriterText>
           </h1>
           <p className="text-[13px] text-white/30 font-mono">
-            Full stack developer & designer building some side projects. <br/><br/>A work in progress... 
+            Full stack developer & designer building some side projects. <br />
+            <br />A work in progress...
           </p>
 
           {/* Connect */}
@@ -120,19 +121,22 @@ export default function Home() {
             <div className="space-y-10">
               {projects.map((project, i) => (
                 <div key={project.title} className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-6">
-                    <span className="hidden font-mono text-[12px] text-white/25 sm:block">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="hidden lg:block transition-transform hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
-                      <GenericAppIcon size={40} />
-                    </span>
+                  <div className="block sm:flex w-full items-center gap-6">
+                    <div className="flex justify-between items-center gap-6 mb-1">
+                      <span className="font-mono text-[12px] text-white/25">{String(i + 1).padStart(2, '0')}</span>
+                      <div className="sm:hidden text-2xs flex-col items-end gap-2">
+                        <StatusBadge status={project.status} />
+                      </div>
+                      <span className="hidden lg:block transition-transform hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
+                        <GenericAppIcon size={40} />
+                      </span>
+                    </div>
                     <div>
                       <h2 className="font-semibold text-lg text-gray-200 pb-1">{project.title}</h2>
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
                     </div>
                   </div>
-                  <div className="hidden flex-col items-end gap-2 sm:flex">
+                  <div className="hidden sm:block flex-col items-end gap-2">
                     <StatusBadge status={project.status} />
                     <span className="font-mono text-xs text-white/30">{project.revenue}</span>
                   </div>
@@ -146,7 +150,7 @@ export default function Home() {
       <footer className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8 text-center">
         <p className="font-mono text-[11px] text-white/20">
           <span className="text-primary/50">{'// '}</span>
-          404 no cookies found 
+          404 no cookies found
         </p>
       </footer>
     </div>
