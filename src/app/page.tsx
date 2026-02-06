@@ -47,7 +47,7 @@ export default function Home() {
       revenue: '$0/mo',
     },
     {
-      title: 'Sage',
+      title: 'Clara',
       tagline: 'More info coming soon',
       status: 'idea',
       revenue: '$0/mo',
@@ -61,10 +61,10 @@ export default function Home() {
   ];
 
   const socials = [
-    { label: 'X', href: '#' },
-    { label: 'GitHub', href: '#' },
-    { label: 'LinkedIn', href: '#' },
-    { label: 'Email', href: '#' },
+    { label: 'X', href: 'https://x.com/nicfindl' },
+    { label: 'GitHub', href: 'https://github.com/NicFindlay' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nicfindlay/' },
+    { label: 'Email', href: 'mailto:nicisme@gmail.com' },
   ];
 
   return (
@@ -75,9 +75,10 @@ export default function Home() {
         {/* Left column — Profile */}
         <aside className="flex flex-col gap-8 lg:sticky lg:top-24 lg:self-start">
           <h1 className="text-4xl font-semibold tracking-tight text-white">
-            <TypewriterText text="Nic Findlay"></TypewriterText></h1>
+            <TypewriterText text="Nic Findlay"></TypewriterText>
+          </h1>
           <p className="text-xs text-white/30 font-mono">
-            Full stack dev trying to be an indie hacker. A work in progress...
+            Full stack dev building some side projects. A work in progress...
           </p>
 
           {/* Connect */}
@@ -105,12 +106,11 @@ export default function Home() {
         {/* Right column — Projects */}
         <section className="flex flex-col gap-8">
           <div className="space-y-2">
-           
             <h2 className="text-xl font-semibold text-primary">
               Side Quests<span className="animate-blink text-primary"> _</span>
             </h2>
 
-             <p className="font-mono text-[12px] text-white/30">
+            <p className="font-mono text-[12px] text-white/30">
               <span className="text-primary/50">{'// '}</span>
               <span className="text-white/40">TODO: heaps...</span>
             </p>
@@ -124,7 +124,9 @@ export default function Home() {
                     <span className="hidden font-mono text-[12px] text-white/25 sm:block">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <GenericAppIcon size={40} />
+                    <span className="hidden lg:block">
+                      <GenericAppIcon size={40} />
+                    </span>
                     <div>
                       <h2 className="font-semibold text-lg text-gray-200 pb-1">{project.title}</h2>
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
