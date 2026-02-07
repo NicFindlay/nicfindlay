@@ -1,4 +1,4 @@
-Nic Findlay side quest portfolio website
+Side hustles portfolio website
 
 https://nicfindlay.com
 
