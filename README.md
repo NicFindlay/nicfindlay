@@ -1,11 +1,7 @@
-Portfolio website for Nic Findlay
-## Getting Started
+Side hustles portfolio website
 
-First, run the development server:
+https://nicfindlay.com
 
 ```bash
 npm run dev
 ```
-
-Open http://localhost:3000 with your browser to see the result.
-
