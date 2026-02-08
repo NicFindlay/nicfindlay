@@ -42,19 +42,19 @@ export default function Home() {
   const projects = [
     {
       title: 'One Trick Pony',
-      tagline: 'Learning SwiftUI and ship something on the App Store. Will leapfrog after this.',
+      tagline: 'Learning SwiftUI and playing around. Should leapfrog after this.',
       status: 'building',
       revenue: '$0/mo',
     },
     {
       title: 'Clara',
-      tagline: 'More info coming soon',
-      status: 'idea',
+      tagline: 'More coming soon. MVP currently in development.',
+      status: 'building',
       revenue: '$0/mo',
     },
     {
       title: 'Crypto in Bio',
-      tagline: 'Random idea so I have 3.',
+      tagline: 'Random idea so can show I have 3.',
       status: 'idea',
       revenue: '$0/mo',
     },
@@ -99,7 +99,7 @@ export default function Home() {
 
           <div className="mt-auto hidden font-mono text-[11px] text-white/20 lg:block">
             <span className="text-white/10">{'/* '}</span>
-            last_sync: 2026-02-06
+            last_sync: 2026-02-08
             <span className="text-white/10">{' */'}</span>
           </div>
         </aside>
