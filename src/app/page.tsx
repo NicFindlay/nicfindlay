@@ -41,16 +41,18 @@ function SocialIcon({ label }: { label: string }) {
 export default function Home() {
   const projects = [
     {
-      title: 'One Trick Pony',
-      tagline: 'Learning SwiftUI and playing around. Should leapfrog after this.',
-      status: 'building',
-      revenue: '$0/mo',
-    },
-    {
       title: 'Clara',
       tagline: 'More coming soon. MVP currently in development.',
       status: 'building',
       revenue: '$0/mo',
+      icon: '/Clara.svg',
+    },
+    {
+      title: 'One Trick Pony',
+      tagline: 'Learning SwiftUI and playing around. Should leapfrog after this.',
+      status: 'archived',
+      revenue: '$0/mo',
+      icon: '/OTP.svg',
     },
     {
       title: 'Crypto in Bio',
@@ -99,7 +101,7 @@ export default function Home() {
 
           <div className="mt-auto hidden font-mono text-[11px] text-white/20 lg:block">
             <span className="text-white/10">{'/* '}</span>
-            last_sync: 2026-02-08
+            last_sync: 2026-02-09
             <span className="text-white/10">{' */'}</span>
           </div>
         </aside>
@@ -128,17 +130,20 @@ export default function Home() {
                         <StatusBadge status={project.status} />
                       </div>
                       <span className="hidden lg:block transition-transform hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]">
-                        <GenericAppIcon size={40} />
+                        <GenericAppIcon size={60} icon={project.icon} />
                       </span>
                     </div>
                     <div>
-                      <h2 className="font-semibold text-lg text-gray-200 pb-1">{project.title}</h2>
+                      <div className="lg:hidden transition-transform mb-3">
+                        <GenericAppIcon size={48} icon={project.icon} />
+                      </div>
+                      <h2 className="font-semibold text-xl text-gray-200 pb-1">{project.title}</h2>
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
                     </div>
                   </div>
-                  <div className="hidden sm:block flex-col items-end gap-2">
+                  <div className="hidden sm:block flex-col items-end text-end gap-2">
                     <StatusBadge status={project.status} />
-                    <span className="font-mono text-xs text-white/30">{project.revenue}</span>
+                    <div className="font-mono text-xs text-white/30 mt-2">{project.revenue}</div>
                   </div>
                 </div>
               ))}
