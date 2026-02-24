@@ -41,11 +41,16 @@ function SocialIcon({ label }: { label: string }) {
 export default function Home() {
   const projects = [
     {
-      title: 'Clara',
-      tagline: 'More coming soon. MVP currently in development.',
+      title: 'Clara: Scan Processed Foods',
+      content: `
+            - MVP currently in development.<br>
+            - Just launched v.0 to Testflight.<br>
+            - Figuring out how to launch on App Store.<br>
+      `,
       status: 'building',
       revenue: '$0/mo',
       icon: '/Clara.svg',
+      link: 'https://claranutri.com/',
     },
     {
       title: 'One Trick Pony',
@@ -53,13 +58,7 @@ export default function Home() {
       status: 'archived',
       revenue: '$0/mo',
       icon: '/OTP.svg',
-    },
-    {
-      title: 'Crypto in Bio',
-      tagline: 'Random idea so can show I have 3.',
-      status: 'idea',
-      revenue: '$0/mo',
-    },
+    }
   ];
 
   const socials = [
@@ -101,7 +100,7 @@ export default function Home() {
 
           <div className="mt-auto hidden font-mono text-[11px] text-white/20 lg:block">
             <span className="text-white/10">{'/* '}</span>
-            last_sync: 2026-02-09
+            last_sync: 2026-02-24
             <span className="text-white/10">{' */'}</span>
           </div>
         </aside>
@@ -123,8 +122,8 @@ export default function Home() {
             <div className="space-y-10">
               {projects.map((project, i) => (
                 <div key={project.title} className="flex items-center justify-between gap-6">
-                  <div className="block sm:flex w-full items-center gap-6">
-                    <div className="flex justify-between items-center gap-6 mb-1">
+                  <div className="block sm:flex w-full items-top gap-6">
+                    <div className="flex justify-between items-top gap-6 mb-1">
                       <span className="font-mono text-[12px] text-white/25">{String(i + 1).padStart(2, '0')}</span>
                       <div className="sm:hidden text-2xs flex-col items-end gap-2">
                         <StatusBadge status={project.status} />
@@ -137,8 +136,32 @@ export default function Home() {
                       <div className="lg:hidden transition-transform mb-3">
                         <GenericAppIcon size={48} icon={project.icon} />
                       </div>
-                      <h2 className="font-semibold text-xl text-gray-200 pb-1">{project.title}</h2>
+                      {project.link ? (
+                        <h2 className="pb-1">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-xl text-gray-200 transition-colors hover:text-primary"
+                          >
+                            {project.title}
+                          </a>
+                        </h2>
+                      ) : (
+                        <h2 className="font-semibold text-xl text-gray-200 pb-1">{project.title}</h2>
+                      )}
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
+                      <div dangerouslySetInnerHTML={{ __html: project.content || '' }} className="mt-4 font-mono text-xs text-white/30 space-y-2"></div>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/70 transition-all hover:border-primary hover:text-primary hover:shadow-[0_0_12px_rgba(57,255,20,0.15)]"
+                        >
+                          Open Project
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="hidden sm:block flex-col items-end text-end gap-2">
