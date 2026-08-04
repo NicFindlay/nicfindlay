@@ -3,6 +3,7 @@ import TerminalWindow from '@/components/TerminalWindow';
 import StatusBadge from '@/components/StatusBadge';
 import TypewriterText from '@/components/TypewriterText';
 import GenericAppIcon from '@/components/GenericAppIcon';
+import VideoThumbnail from '@/components/VideoThumbnail';
 
 function SocialIcon({ label }: { label: string }) {
   switch (label) {
@@ -53,6 +54,22 @@ export default function Home() {
       link: 'https://claranutri.com/',
     },
     {
+      title: 'A Motorbike Trip With My Dad Through The Alps',
+      tagline: 'Started a YouTube channel. Editing takes longer than the riding.',
+      content: `
+            - Four days, two bikes: Milan → the Swiss Alps → the Italian Lakes.<br>
+            - Amateur at both the riding and the filming.<br>
+            - Mostly recorded it for the memories with my old man.<br>
+      `,
+      status: 'live',
+      revenue: '$0/mo',
+      icon: '/youtube-channel.jpg',
+      link: 'https://www.youtube.com/watch?v=1oEkuRjEjWk',
+      thumbnail: '/alps-video.jpg',
+      duration: '36:39',
+      linkLabel: 'Watch on YouTube',
+    },
+    {
       title: 'One Trick Pony',
       tagline: 'Learning SwiftUI and playing around. Should leapfrog after this.',
       status: 'archived',
@@ -100,7 +117,7 @@ export default function Home() {
 
           <div className="mt-auto hidden font-mono text-[11px] text-white/20 lg:block">
             <span className="text-white/10">{'/* '}</span>
-            last_sync: 2026-02-24
+            last_sync: 2026-08-04
             <span className="text-white/10">{' */'}</span>
           </div>
         </aside>
@@ -152,6 +169,14 @@ export default function Home() {
                       )}
                       <p className="font-mono text-xs text-white/40">{project.tagline}</p>
                       <div dangerouslySetInnerHTML={{ __html: project.content || '' }} className="mt-4 font-mono text-xs text-white/30 space-y-2"></div>
+                      {project.thumbnail && project.link && (
+                        <VideoThumbnail
+                          src={project.thumbnail}
+                          href={project.link}
+                          title={project.title}
+                          duration={project.duration}
+                        />
+                      )}
                       {project.link && (
                         <a
                           href={project.link}
@@ -159,7 +184,7 @@ export default function Home() {
                           rel="noopener noreferrer"
                           className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs text-white/70 transition-all hover:border-primary hover:text-primary hover:shadow-[0_0_12px_rgba(57,255,20,0.15)]"
                         >
-                          Open Project
+                          {project.linkLabel ?? 'Open Project'}
                         </a>
                       )}
                     </div>
