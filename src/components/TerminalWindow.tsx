@@ -1,34 +1,34 @@
-import { ReactNode } from "react";
+import { type CSSProperties, type ReactNode } from 'react';
 
-interface TerminalWindowProps {
-  title?: string;
+/**
+ * Window chrome carries information instead of costume: the macOS traffic
+ * lights are gone so the only coloured dots on the page are the ones that
+ * mean something (project status).
+ */
+export default function TerminalWindow({
+  path = 'terminal',
+  meta,
+  children,
+  className = '',
+  style,
+}: {
+  path?: string;
+  meta?: string;
   children: ReactNode;
   className?: string;
-}
-
-export default function TerminalWindow({
-  title = "terminal",
-  children,
-  className = "",
-}: TerminalWindowProps) {
+  style?: CSSProperties;
+}) {
   return (
-    <div
-      className={`relative overflow-hidden rounded-xl border border-white/10 bg-[#0d0d0d] terminal-glow ${className}`}
-    >
-      {/* Title bar */}
-      <div className="flex items-center gap-2 border-b border-white/[0.06] bg-white/[0.02] px-4 py-2.5">
-        <div className="flex gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-          <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-          <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-        </div>
-        <span className="ml-2 font-mono text-[11px] text-white/30">
-          {title}
+    <div className={`panel relative overflow-hidden ${className}`} style={style}>
+      <div className="flex items-center justify-between gap-4 border-b border-white/6 bg-white/[0.015] px-5 py-3">
+        <span className="flex items-baseline gap-2 whitespace-nowrap text-[11px]">
+          <span className="text-white/25">$</span>
+          <span className="text-white/45">{path}</span>
         </span>
+        {meta && <span className="label tabular hidden whitespace-nowrap sm:block">{meta}</span>}
       </div>
 
-      {/* Content */}
-      <div className="scanline relative p-5">{children}</div>
+      <div className="relative px-5 py-2 sm:px-7">{children}</div>
     </div>
   );
 }

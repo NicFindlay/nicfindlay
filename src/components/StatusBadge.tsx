@@ -1,44 +1,41 @@
-type Status = "live" | "building" | "idea" | "archived";
+type Status = 'live' | 'building' | 'idea' | 'archived';
 
-const statusConfig: Record<
-  Status,
-  { label: string; dotClass: string; bgClass: string; textClass: string }
-> = {
+const statusConfig: Record<Status, { label: string; dot: string; text: string; ring: string }> = {
   live: {
-    label: "live",
-    dotClass: "bg-primary animate-pulse-dot",
-    bgClass: "bg-emerald-400/10 border-emerald-400/30",
-    textClass: "text-primary",
+    label: 'live',
+    dot: 'bg-[var(--phosphor)] animate-pulse-dot',
+    text: 'text-[var(--phosphor)]',
+    ring: 'border-[rgb(57_255_20_/_0.35)] bg-[rgb(57_255_20_/_0.06)]',
   },
   building: {
-    label: "building",
-    dotClass: "bg-amber-500",
-    bgClass: "bg-amber-500/10 border-amber-600/30",
-    textClass: "text-amber-500",
+    label: 'building',
+    dot: 'bg-[var(--amber)]',
+    text: 'text-[var(--amber)]',
+    ring: 'border-[rgb(255_176_32_/_0.3)] bg-[rgb(255_176_32_/_0.06)]',
   },
   idea: {
-    label: "idea",
-    dotClass: "bg-slate-400",
-    bgClass: "bg-slate-400/10 border-slate-400/30",
-    textClass: "text-slate-400",
+    label: 'idea',
+    dot: 'bg-[var(--slate)]',
+    text: 'text-[var(--slate)]',
+    ring: 'border-white/12 bg-white/[0.03]',
   },
   archived: {
-    label: "abandoned",
-    dotClass: "bg-zinc-600",
-    bgClass: "bg-zinc-600/10 border-zinc-600/30",
-    textClass: "text-zinc-500",
+    label: 'abandoned',
+    dot: 'bg-white/25',
+    text: 'text-white/35',
+    ring: 'border-white/10 bg-white/[0.02]',
   },
 };
 
 export default function StatusBadge({ status }: { status: string }) {
-  const config = statusConfig[(status as Status)] ?? statusConfig.idea;
+  const config = statusConfig[status as Status] ?? statusConfig.idea;
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider ${config.bgClass}`}
+      className={`inline-flex items-center gap-2 rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] ${config.ring}`}
     >
-      <span className={`h-1.5 w-1.5 rounded-full ${config.dotClass}`} />
-      <span className={config.textClass}>{config.label}</span>
+      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${config.dot}`} />
+      <span className={config.text}>{config.label}</span>
     </span>
   );
 }
