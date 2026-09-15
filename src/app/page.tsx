@@ -68,6 +68,19 @@ function SocialIcon({ label }: { label: string }) {
 export default function Home() {
   const projects: Project[] = [
     {
+      title: 'Helmsman',
+      date: '2026.09',
+      notes: [
+        'Building a tool to manage household finances and investments alongside UK sole-trader books.',
+        'CSV imports (Monzo, Revolut, Trading 212), invoice-to-receipt matching, portfolio, and a tax P&L for returns.',
+        'Local-first for now; potentially become small SaaS.',
+      ],
+      status: 'building',
+      icon: '/helmsman.svg',
+      link: 'https://github.com/NicFindlay/helmsman',
+      linkLabel: 'GitHub',
+    },
+    {
       title: 'A Motorbike Trip With My Dad Through The Alps',
       date: '2026.07',
       tagline: 'Started a YouTube channel. Editing takes longer than the riding.',
@@ -147,7 +160,7 @@ export default function Home() {
             className="intro tabular hidden border-t border-white/6 pt-6 text-[11px] text-white/20 lg:block"
             style={{ animationDelay: '440ms' }}
           >
-            last_sync 2026.08.04
+            last_sync 2026.09.15
           </p>
         </aside>
 
@@ -158,7 +171,7 @@ export default function Home() {
               Side Quests<span className="animate-blink text-primary"> _</span>
             </h2>
             <p className="mt-2 text-[12px] text-[var(--text-3)]">
-              Three attempts, one shipped, two abandoned. TODO: heaps&hellip;
+              One building, one shipped, two abandoned. TODO: heaps&hellip;
             </p>
           </div>
 
