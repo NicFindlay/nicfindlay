@@ -73,7 +73,7 @@ export default function Home() {
       notes: [
         'Building a tool to manage household finances and investments alongside UK sole-trader books.',
         'CSV imports (Monzo, Revolut, Trading 212), invoice-to-receipt matching, portfolio, and a tax P&L for returns.',
-        'Local-first for now; wiring Clerk + Postgres on Railway so it can become a small SaaS.',
+        'Local-first for now; potentially become small SaaS.',
       ],
       status: 'building',
       icon: '/helmsman.svg',
