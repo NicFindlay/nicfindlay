@@ -68,14 +68,15 @@ function SocialIcon({ label }: { label: string }) {
 export default function Home() {
   const projects: Project[] = [
     {
-      title: 'Helmsman: Household Finance',
+      title: 'Helmsman',
       date: '2026.09',
-      tagline: 'Local-first money log turning into a small SaaS — CSVs in, cashflow and sole-trader P&L out.',
       notes: [
-        'Import Monzo / Revolut / Trading 212, tag household vs business, match invoices to receipts.',
-        'Currently wiring Clerk + Postgres on Railway.',
+        'Building a tool to manage household finances and investments alongside UK sole-trader books.',
+        'CSV imports (Monzo, Revolut, Trading 212), invoice-to-receipt matching, portfolio, and a tax P&L for returns.',
+        'Local-first for now; wiring Clerk + Postgres on Railway so it can become a small SaaS.',
       ],
       status: 'building',
+      icon: '/helmsman.svg',
       link: 'https://github.com/NicFindlay/helmsman',
       linkLabel: 'GitHub',
     },
