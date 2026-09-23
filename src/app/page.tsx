@@ -76,7 +76,7 @@ export default function Home() {
         'Local-first for now; potentially become small SaaS.',
       ],
       status: 'building',
-      icon: '/helmsman.svg',
+      icon: '/helmsman.png',
       link: 'https://github.com/NicFindlay/helmsman',
       linkLabel: 'GitHub',
     },
