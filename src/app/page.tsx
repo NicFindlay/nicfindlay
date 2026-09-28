@@ -16,6 +16,8 @@ type Project = {
   notes?: string[];
   status: string;
   icon?: string;
+  /** Full logo lockup, including the name, shown in place of the icon and title. */
+  logo?: string;
   link?: string;
   linkLabel?: string;
   thumbnail?: string;
@@ -65,6 +67,14 @@ function SocialIcon({ label }: { label: string }) {
   }
 }
 
+function entryHeading(project: Project) {
+  return project.logo ? (
+    <img src={project.logo} alt={project.title} className="h-9 w-auto" />
+  ) : (
+    project.title
+  );
+}
+
 export default function Home() {
   const projects: Project[] = [
     {
@@ -76,7 +86,7 @@ export default function Home() {
         'Local-first for now; potentially become small SaaS.',
       ],
       status: 'building',
-      icon: '/helmsman.png',
+      logo: '/helmsman.svg',
       link: 'https://github.com/NicFindlay/helmsman',
       linkLabel: 'GitHub',
     },
@@ -199,15 +209,15 @@ export default function Home() {
                   <div className="min-w-0">
                     <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-5">
                       <div className="flex min-w-0 items-start gap-4">
-                        <GenericAppIcon size={44} icon={project.icon} />
+                        {!project.logo && <GenericAppIcon size={44} icon={project.icon} />}
                         <div className="min-w-0">
                           <h3 className="entry-title display text-[19px] leading-snug text-white/90">
                             {project.link ? (
                               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                {project.title}
+                                {entryHeading(project)}
                               </a>
                             ) : (
-                              project.title
+                              entryHeading(project)
                             )}
                           </h3>
                           {project.tagline && (
