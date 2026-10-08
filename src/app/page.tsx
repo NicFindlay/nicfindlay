@@ -80,15 +80,15 @@ export default function Home() {
     {
       title: 'Helmsman',
       date: '2026.09',
+      tagline: 'A finance app for UK households and sole traders.',
       notes: [
-        'Building a tool to manage household finances and investments alongside UK sole-trader books.',
-        'CSV imports (Monzo, Revolut, Trading 212), invoice-to-receipt matching, portfolio, and a tax P&L for returns.',
-        'Local-first for now; potentially become small SaaS.',
+        'CSV imports from Monzo, Revolut, Trading 212 and Amex, and a sole-trader P&L mapped to HMRC lines.',
+        'Connect AI plugs AI assistants into your data over MCP, with tokens you can revoke.',
       ],
-      status: 'building',
+      status: 'live',
       logo: '/helmsman.svg',
-      link: 'https://github.com/NicFindlay/helmsman',
-      linkLabel: 'GitHub',
+      link: 'https://tryhelmsman.app',
+      linkLabel: 'tryhelmsman.app',
     },
     {
       title: 'A Motorbike Trip With My Dad Through The Alps',
@@ -170,7 +170,7 @@ export default function Home() {
             className="intro tabular hidden border-t border-white/6 pt-6 text-[11px] text-white/20 lg:block"
             style={{ animationDelay: '440ms' }}
           >
-            last_sync 2026.09.15
+            last_sync 2026.10.08
           </p>
         </aside>
 
@@ -181,7 +181,7 @@ export default function Home() {
               Side Quests<span className="animate-blink text-primary"> _</span>
             </h2>
             <p className="mt-2 text-[12px] text-[var(--text-3)]">
-              One building, one shipped, two abandoned. TODO: heaps&hellip;
+              Two shipped, two abandoned. TODO: heaps&hellip;
             </p>
           </div>
 
